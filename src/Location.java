@@ -1,4 +1,4 @@
-package packagee;
+
 
 public class Location {
 	private int rowNumber;

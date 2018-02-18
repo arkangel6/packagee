@@ -1,4 +1,4 @@
-package packagee;
+
 
 public class ContestOrganizer {
 	/** the number of rows of contestant */
@@ -20,16 +20,34 @@ public class ContestOrganizer {
 	 */
 	public void sort(Contestant[] arr) {
 
-		int[] newArray = new int[arr.length];
-		int counter = 0;
-
+		Contestant[] newArray = new Contestant[arr.length];
+		
+		boolean swap = true;
+		boolean swap2 = false;
+		while(swap) {
+			System.out.println(arr.length);
+		
 		for (int i = 0; i < arr.length - 1; i++) {
-			if (arr[i] > arr[i + 1]) {
+		
+			if (arr[4].getScore() > arr[5].getScore()) {
 				newArray[i] = arr[i + 1];
 				newArray[i + 1] = arr[i];
+				if(swap2) {
+				swap = false;
+				}
+				else {
+				swap2 = true;
+				}
+			}
+			else {
+				newArray[i] = arr[i];
 			}
 		}
-
+		arr = newArray;
+		
+		}
+			
+		
 	}
 
 	/**
@@ -38,6 +56,9 @@ public class ContestOrganizer {
 	 * 0 <= k < NUM_ROWS
 	 */
 	public void sortAllRows() {
+		
+		
+		
 
 	}
 

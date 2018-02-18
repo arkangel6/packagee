@@ -1,4 +1,4 @@
-package packagee;
+
 
 public class Contestant {
 	private String name;
