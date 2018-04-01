@@ -9,7 +9,7 @@ public class Crossword {
 			for (int j = 0; j < blackSquares[i].length; j++) {
 
 				if (toBeLabeled(i, j, blackSquares)) {
-					\puzzle[i][j] = new Square(true, -1);
+					puzzle[i][j] = new Square(true, -1);
 				} else {
 					puzzle[i][j] = new Square(false, 1);
 				}

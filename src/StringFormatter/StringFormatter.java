@@ -22,21 +22,33 @@ public class StringFormatter {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(totalLetters(words));
-		System.out.println(basicGapWidth(wordList2, 20));
-		// System.out.println(leftoverSpaces(words, 0));
+		//System.out.println(totalLetters(wordList2));
+		System.out.println("basic gap width: " + basicGapWidth(wordList1, 20));
+		System.out.println("leftover spaces: " +leftoverSpaces(wordList3, 20));
 	}
 
 	public static int basicGapWidth(List<String> wordList, int formattedLen) {
 
 		int charNumbers = totalLetters(wordList);
-
+		
 		int spaces = formattedLen - charNumbers;
-
+		//System.out.println(spaces);
+		
+		int ngaps = wordList.size() - 1;
+		//System.out.println(ngaps);
 		int counter = 0;
+		while(spaces - ngaps >= 0) {
+			spaces = spaces - ngaps;
+			counter++;
+		}
+		return counter;
+		 
+		
+		
+		/*int counter = 0;
 		int leftOver = 0;
 
-		System.out.println(spaces);
+		//System.out.println(spaces);
 		while ((spaces - wordList.size()) >= 0) {
 			if ((spaces - wordList.size()) >= 0) {
 				spaces -= wordList.size();
@@ -44,9 +56,25 @@ public class StringFormatter {
 			} else {
 				leftOver = spaces;
 			}
+		}*/
+
+	//	return 0;
+
+	}
+	public static int leftoverSpaces(List<String> wordList, int formattedLen) {
+
+int charNumbers = totalLetters(wordList);
+		
+		int spaces = formattedLen - charNumbers;
+		//System.out.println(spaces);
+		
+		int ngaps = wordList.size() - 1;
+		//System.out.println(ngaps);
+		int counter = 0;
+		while(spaces - ngaps >= 0) {
+			spaces = spaces - ngaps;
+			counter++;
 		}
-
-		return counter;
-
+		return spaces;
 	}
 }
